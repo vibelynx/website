@@ -20,8 +20,6 @@ const fetchTrackData = async (by: "id" | "url", value: string): Promise<Track | 
   const data = await response.json()
   const track = by === "url" ? data[0] : data;
 
-  console.log(track)
-
   return {
     id: track.id,
     title: track.title,
@@ -33,6 +31,7 @@ const fetchTrackData = async (by: "id" | "url", value: string): Promise<Track | 
 }
 
 export const load: PageServerLoad = async ({ params, url }) => {
+  // @ts-ignore
   const id = params.id
   const trackURL = url.searchParams.get("url")
 
