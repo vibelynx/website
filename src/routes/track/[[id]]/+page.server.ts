@@ -6,9 +6,9 @@ const fetchTrackData = async (by: "id" | "url", value: string): Promise<Track | 
   let response: Response
 
   if (by === "id" && value != "") {
-    response = await fetch(`https://api.musicbridge.fm/v1/tracks/${value}`)
+    response = await fetch(`https://api.vibelynx.app/v1/tracks/${value}`)
   } else if (by === "url" && value != "") {
-    response = await fetch(`https://api.musicbridge.fm/v1/tracks?urls=${value}`)
+    response = await fetch(`https://api.vibelynx.app/v1/tracks?urls=${value}`)
   } else {
     return null
   }

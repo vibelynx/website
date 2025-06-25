@@ -1,4 +1,4 @@
 import SourceNode from "./SourceNode.svelte"
-import MusicBridgeNode from "./MusicBridgeNode.svelte"
+import VibeLynxNode from "./VibeLynxNode.svelte"
 
-export { SourceNode, MusicBridgeNode }
+export { SourceNode, VibeLynxNode }

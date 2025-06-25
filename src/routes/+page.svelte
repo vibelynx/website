@@ -19,7 +19,7 @@
 		isLoading = true
 
 		try {
-			const response = await fetch(`https://api.musicbridge.fm/v1/tracks?urls=${url}`)
+			const response = await fetch(`https://api.vibelynx.app/v1/tracks?urls=${url}`)
 
 			if (!response.ok) {
 				const errorResult = await response.json()
@@ -37,7 +37,7 @@
 		}
 	}
 
-	$: shareableLink = `https://musicbridge.fm/track?url=${url}`
+	$: shareableLink = `https://vibelynx.app/track?url=${url}`
 </script>
 
 <main class="mt-32">

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { SvelteFlow } from "@xyflow/svelte"
 	import "@xyflow/svelte/dist/style.css"
-	import { MusicBridgeNode, SourceNode } from "./Flow"
+	import { VibeLynxNode, SourceNode } from "./Flow"
 	import TargetNode from "./Flow/TargetNode.svelte"
 
 	const nodeTypes = {
 		sourceNode: SourceNode,
-		musicbridgeNode: MusicBridgeNode,
+		VibeLynxNode: VibeLynxNode,
 		targetNode: TargetNode
 	}
 
@@ -18,8 +18,8 @@
 			data: { key: "appleMusic", icon: "/appleMusic.svg" }
 		},
 		{
-			id: "musicbridge-node",
-			type: "musicbridgeNode",
+			id: "vibelynx-node",
+			type: "vibelynxNode",
 			position: { x: 0, y: -4 },
 			data: { key: "appleMusic", icon: "/appleMusic.svg" }
 		},
@@ -51,32 +51,32 @@
 
 	let edges = $state.raw([
 		{
-			id: "source-to-musicbridge-edge",
+			id: "source-to-vibelynx-edge",
 			source: "source-node",
-			target: "musicbridge-node",
+			target: "vibelynx-node",
 			animated: true
 		},
 		{
-			id: "musicbridge-to-target-1-edge",
-			source: "musicbridge-node",
+			id: "vibelynx-to-target-1-edge",
+			source: "vibelynx-node",
 			target: "target-node-1",
 			animated: true
 		},
 		{
-			id: "musicbridge-to-target-2-edge",
-			source: "musicbridge-node",
+			id: "vibelynx-to-target-2-edge",
+			source: "vibelynx-node",
 			target: "target-node-2",
 			animated: true
 		},
 		{
-			id: "musicbridge-to-target-3-edge",
-			source: "musicbridge-node",
+			id: "vibelynx-to-target-3-edge",
+			source: "vibelynx-node",
 			target: "target-node-3",
 			animated: true
 		},
 		{
-			id: "musicbridge-to-target-4-edge",
-			source: "musicbridge-node",
+			id: "vibelynx-to-target-4-edge",
+			source: "vibelynx-node",
 			target: "target-node-4",
 			animated: true
 		}

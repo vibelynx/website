@@ -14,7 +14,7 @@
 	<meta property="og:title" content={track.title} />
 	<meta property="og:description" content="TODO" />
 	<meta property="og:image" content={track.artwork} />
-	<meta property="og:url" content={`https://musicbridge.fm/track/${track.id}`} />
+	<meta property="og:url" content={`https://vibelynx.app/track/${track.id}`} />
 	<meta property="og:type" content="music.song" />
 </svelte:head>
 
