@@ -24,7 +24,7 @@
 				</a>
 			</div>
 			<div>
-				<ul class="flex items-center gap-8">
+				<ul class="hidden items-center gap-8 md:flex">
 					<li>
 						<a href="##">Pricing</a>
 					</li>
