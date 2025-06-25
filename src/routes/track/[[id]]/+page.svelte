@@ -7,10 +7,7 @@
 
 <svelte:head>
 	<title>{`${track.title} - Vibe Lynx`}</title>
-	<meta
-		name="description"
-		content={`Listen to ${track.title} on any platform with vibe lynx!`}
-	/>
+	<meta name="description" content={`Listen to ${track.title} on any platform with vibe lynx!`} />
 	<meta property="og:title" content={track.title} />
 	<meta property="og:description" content="TODO" />
 	<meta property="og:image" content={track.artwork} />
