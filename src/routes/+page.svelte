@@ -42,9 +42,15 @@
 
 <main class="mt-32">
 	<div class="flex items-center justify-between">
-		<div>
-			<h1 class="text-4xl font-bold">Music without borders</h1>
-			<p class="text-lg text-gray-500">Stream music on your phone without any pesky ads.</p>
+		<div class="max-w-md space-y-4">
+			<div class="text-5xl font-bold">
+				<h1>Share music across</h1>
+				<h1>every platform</h1>
+			</div>
+			<p class="text-md text-gray-500">
+				One link that opens in Spotify, Apple Music, YouTube Music, and more. Connect your music
+				experience seamlessly.
+			</p>
 			<div class="flex items-center space-x-2">
 				<form on:submit={handleSubmit} class="flex w-full max-w-sm items-center space-x-2">
 					<Input
