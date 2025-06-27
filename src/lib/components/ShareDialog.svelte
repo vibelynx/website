@@ -1,10 +1,19 @@
 <script lang="ts">
 	import { Button, buttonVariants } from "$lib/components/ui/button"
 	import * as Dialog from "$lib/components/ui/dialog"
-	import { ShareIcon, CopyIcon } from "@lucide/svelte"
+	import { ShareIcon, CopyIcon, CheckIcon } from "@lucide/svelte"
 	import ShareGraph from "./ShareGraph.svelte"
 
 	const { shareableLink, hidden } = $props<{ shareableLink: string; hidden: boolean }>()
+
+	let copied = $state(false)
+	function copyShareableLink() {
+		navigator.clipboard.writeText(shareableLink)
+		copied = true
+		setTimeout(() => {
+			copied = false
+		}, 1000) // 1s
+	}
 </script>
 
 <Dialog.Root>
@@ -28,9 +37,13 @@
 				<div>Share link</div>
 				<div class="flex items-center justify-between space-x-2 rounded-lg bg-neutral-200 p-2">
 					<div class="scrollbar-none overflow-x-scroll text-nowrap">{shareableLink}</div>
-					<Button onclick={() => navigator.clipboard.writeText(shareableLink)} variant="ghost"
-						><CopyIcon /></Button
-					>
+					<Button onclick={copyShareableLink} variant="ghost">
+						{#if copied}
+							<CheckIcon />
+						{:else}
+							<CopyIcon />
+						{/if}
+					</Button>
 				</div>
 			</div>
 		</div>
