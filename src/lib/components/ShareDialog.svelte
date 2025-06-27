@@ -28,7 +28,9 @@
 				<div>Share link</div>
 				<div class="flex items-center justify-between space-x-2 rounded-lg bg-neutral-200 p-2">
 					<div class="scrollbar-none overflow-x-scroll text-nowrap">{shareableLink}</div>
-					<Button variant="ghost"><CopyIcon /></Button>
+					<Button onclick={() => navigator.clipboard.writeText(shareableLink)} variant="ghost"
+						><CopyIcon /></Button
+					>
 				</div>
 			</div>
 		</div>
