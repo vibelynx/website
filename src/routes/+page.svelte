@@ -47,7 +47,11 @@
 			<p class="text-lg text-gray-500">Stream music on your phone without any pesky ads.</p>
 			<div class="flex items-center space-x-2">
 				<form on:submit={handleSubmit} class="flex w-full max-w-sm items-center space-x-2">
-					<Input bind:value={url} type="url" placeholder="email" />
+					<Input
+						bind:value={url}
+						type="url"
+						placeholder="enter a music link to share and preview"
+					/>
 					<Button type="submit" disabled={isLoading} class="z-40"
 						>{isLoading ? "Loading" : "Preview"}</Button
 					>
