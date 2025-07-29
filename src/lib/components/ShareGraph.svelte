@@ -41,13 +41,13 @@
 			id: "target-node-3",
 			type: "targetNode",
 			position: { x: 200, y: -20 },
-			data: { key: "appleMusic", icon: "/appleMusic.svg" }
+			data: { key: "youtube", icon: "/youtube.svg" }
 		},
 		{
 			id: "target-node-4",
 			type: "targetNode",
 			position: { x: 200, y: 20 },
-			data: { key: "appleMusic", icon: "/appleMusic.svg" }
+			data: { key: "soundCloud", icon: "/soundCloud.svg" }
 		}
 	])
 
