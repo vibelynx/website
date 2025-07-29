@@ -26,25 +26,25 @@
 			data: { key: "appleMusic", icon: "/appleMusic.svg" }
 		},
 		{
-			id: "target-node-1",
+			id: "appleMusic-node",
 			type: "targetNode",
 			position: { x: 150, y: 50 },
 			data: { key: "appleMusic", icon: "/appleMusic.svg" }
 		},
 		{
-			id: "target-node-2",
+			id: "spotify-node",
 			type: "targetNode",
 			position: { x: 150, y: -50 },
 			data: { key: "spotify", icon: "/spotify.svg" }
 		},
 		{
-			id: "target-node-3",
+			id: "youtube-node",
 			type: "targetNode",
 			position: { x: 200, y: -20 },
 			data: { key: "youtube", icon: "/youtube.svg" }
 		},
 		{
-			id: "target-node-4",
+			id: "soundCloud-node",
 			type: "targetNode",
 			position: { x: 200, y: 20 },
 			data: { key: "soundCloud", icon: "/soundCloud.svg" }
@@ -61,30 +61,30 @@
 			style: "stroke: #000000; stroke-width: 2;"
 		},
 		{
-			id: "vibelynx-to-target-1-edge",
+			id: "vibelynx-to-appleMusic-edge",
 			source: "vibelynx-node",
-			target: "target-node-1",
+			target: "appleMusic-node",
 			animated: true,
 			style: "stroke: #000000; stroke-width: 2;"
 		},
 		{
-			id: "vibelynx-to-target-2-edge",
+			id: "vibelynx-to-spotify-edge",
 			source: "vibelynx-node",
-			target: "target-node-2",
+			target: "spotify-node",
 			animated: true,
 			style: "stroke: #000000; stroke-width: 2;"
 		},
 		{
-			id: "vibelynx-to-target-3-edge",
+			id: "vibelynx-to-youtube-edge",
 			source: "vibelynx-node",
-			target: "target-node-3",
+			target: "youtube-node",
 			animated: true,
 			style: "stroke: #000000; stroke-width: 2;"
 		},
 		{
-			id: "vibelynx-to-target-4-edge",
+			id: "vibelynx-to-soundCloud-edge",
 			source: "vibelynx-node",
-			target: "target-node-4",
+			target: "soundCloud-node",
 			animated: true,
 			style: "stroke: #000000; stroke-width: 2;"
 		}
