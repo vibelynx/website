@@ -16,7 +16,7 @@
 		minute = `0${minute}`
 	}
 
-	$: time = `${hour} : ${minute}`
+	$: time = `${hour}:${minute}`
 </script>
 
 <div class="relative" style="width: {width}px; height: {height}px;">
@@ -24,7 +24,7 @@
 		<slot />
 	</div>
 	<div class="absolute top-[4.2%] left-[18%]">
-		<div class="text-lg font-medium">{time}</div>
+		<div class="text-lg font-medium tracking-wider">{time}</div>
 	</div>
 	<div class="absolute top-[4.5%] right-[12%]">
 		<div class="flex items-center space-x-2">
