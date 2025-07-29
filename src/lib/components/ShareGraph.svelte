@@ -19,7 +19,7 @@
 		},
 		{
 			id: "vibelynx-node",
-			type: "vibelynxNode",
+			type: "VibeLynxNode",
 			position: { x: 0, y: -4 },
 			data: { key: "appleMusic", icon: "/appleMusic.svg" }
 		},
@@ -49,51 +49,60 @@
 		}
 	])
 
+	// TODO: make edge colors a gradiant between the two icon colors
 	let edges = $state.raw([
 		{
 			id: "source-to-vibelynx-edge",
 			source: "source-node",
 			target: "vibelynx-node",
-			animated: true
+			animated: true,
+			style: "stroke: #3b82f6; stroke-width: 2;"
 		},
 		{
 			id: "vibelynx-to-target-1-edge",
 			source: "vibelynx-node",
 			target: "target-node-1",
-			animated: true
+			animated: true,
+			style: "stroke: #10b981; stroke-width: 2;"
 		},
 		{
 			id: "vibelynx-to-target-2-edge",
 			source: "vibelynx-node",
 			target: "target-node-2",
-			animated: true
+			animated: true,
+			style: "stroke: #10b981; stroke-width: 2;"
 		},
 		{
 			id: "vibelynx-to-target-3-edge",
 			source: "vibelynx-node",
 			target: "target-node-3",
-			animated: true
+			animated: true,
+			style: "stroke: #10b981; stroke-width: 2;"
 		},
 		{
 			id: "vibelynx-to-target-4-edge",
 			source: "vibelynx-node",
 			target: "target-node-4",
-			animated: true
+			animated: true,
+			style: "stroke: #10b981; stroke-width: 2;"
 		}
 	])
 </script>
 
-<SvelteFlow
-	bind:nodes
-	bind:edges
-	{nodeTypes}
-	proOptions={{ hideAttribution: true }}
-	panOnDrag={false}
-	zoomOnPinch={false}
-	zoomOnScroll={false}
-	zoomOnDoubleClick={false}
-	nodesDraggable={false}
-	nodesConnectable={false}
-	elementsSelectable={false}
-	fitView
-/>
+<div class="h-full w-full bg-neutral-50 rounded-lg">
+	<SvelteFlow
+		bind:nodes
+		bind:edges
+		{nodeTypes}
+		proOptions={{ hideAttribution: true }}
+		panOnDrag={false}
+		zoomOnPinch={false}
+		zoomOnScroll={false}
+		zoomOnDoubleClick={false}
+		nodesDraggable={false}
+		nodesConnectable={false}
+		elementsSelectable={false}
+		fitView
+		class="h-full w-full"
+	/>
+</div>
