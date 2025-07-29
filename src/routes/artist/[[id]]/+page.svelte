@@ -36,7 +36,6 @@
 							<div class="flex items-center space-x-4">
 								<img class="h-8 w-8" src={`/${platform.key}.svg`} alt={`${platform.name} logo`} />
 								<p class="font-medium">{platform.name}</p>
-								<p></p>
 							</div>
 						</a>
 					</div>
