@@ -63,7 +63,7 @@
 					>
 				</form>
 				<div>
-					<ShareDialog hidden={track} {shareableLink} />
+					<ShareDialog hidden={track} {shareableLink} {track} />
 				</div>
 			</div>
 		</div>

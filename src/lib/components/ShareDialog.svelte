@@ -4,7 +4,11 @@
 	import { ShareIcon, CopyIcon, CheckIcon } from "@lucide/svelte"
 	import ShareGraph from "./ShareGraph.svelte"
 
-	const { shareableLink, hidden } = $props<{ shareableLink: string; hidden: boolean }>()
+	const { shareableLink, hidden, track } = $props<{ 
+		shareableLink: string; 
+		hidden: boolean;
+		track?: any;
+	}>()
 
 	let copied = $state(false)
 	function copyShareableLink() {
@@ -26,7 +30,7 @@
 		<div class="mx-auto max-w-md space-y-8">
 			<Dialog.Header>
 				<div class="h-40 w-full">
-					<ShareGraph />
+					<ShareGraph {track} />
 				</div>
 				<Dialog.Title class="text-center text-4xl">Share with Friends</Dialog.Title>
 				<Dialog.Description class="text-center"

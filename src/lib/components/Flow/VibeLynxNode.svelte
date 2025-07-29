@@ -5,7 +5,7 @@
 </script>
 
 <Handle type="target" position={Position.Left} />
-<div class={`${id} h-10 w-10`}>
+<div class={`${id} h-12 w-12`}>
 	<img src={`${data.icon}`} alt={`${data.key}`} />
 </div>
 <Handle type="source" position={Position.Right} />

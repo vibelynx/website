@@ -4,6 +4,8 @@
 	import { VibeLynxNode, SourceNode } from "./Flow"
 	import TargetNode from "./Flow/TargetNode.svelte"
 
+	const { track } = $props<{ track?: any }>()
+
 	const nodeTypes = {
 		sourceNode: SourceNode,
 		VibeLynxNode: VibeLynxNode,
@@ -14,13 +16,13 @@
 		{
 			id: "source-node",
 			type: "sourceNode",
-			position: { x: -200, y: 0 },
-			data: { key: "appleMusic", icon: "/appleMusic.svg" }
+			position: { x: -200, y: -15 },
+			data: { key: track?.title, icon: track?.artwork }
 		},
 		{
 			id: "vibelynx-node",
 			type: "VibeLynxNode",
-			position: { x: 0, y: -4 },
+			position: { x: -25, y: 0 },
 			data: { key: "appleMusic", icon: "/appleMusic.svg" }
 		},
 		{
@@ -33,7 +35,7 @@
 			id: "target-node-2",
 			type: "targetNode",
 			position: { x: 150, y: -50 },
-			data: { key: "appleMusic", icon: "/appleMusic.svg" }
+			data: { key: "spotify", icon: "/spotify.svg" }
 		},
 		{
 			id: "target-node-3",
@@ -56,40 +58,40 @@
 			source: "source-node",
 			target: "vibelynx-node",
 			animated: true,
-			style: "stroke: #3b82f6; stroke-width: 2;"
+			style: "stroke: #000000; stroke-width: 2;"
 		},
 		{
 			id: "vibelynx-to-target-1-edge",
 			source: "vibelynx-node",
 			target: "target-node-1",
 			animated: true,
-			style: "stroke: #10b981; stroke-width: 2;"
+			style: "stroke: #000000; stroke-width: 2;"
 		},
 		{
 			id: "vibelynx-to-target-2-edge",
 			source: "vibelynx-node",
 			target: "target-node-2",
 			animated: true,
-			style: "stroke: #10b981; stroke-width: 2;"
+			style: "stroke: #000000; stroke-width: 2;"
 		},
 		{
 			id: "vibelynx-to-target-3-edge",
 			source: "vibelynx-node",
 			target: "target-node-3",
 			animated: true,
-			style: "stroke: #10b981; stroke-width: 2;"
+			style: "stroke: #000000; stroke-width: 2;"
 		},
 		{
 			id: "vibelynx-to-target-4-edge",
 			source: "vibelynx-node",
 			target: "target-node-4",
 			animated: true,
-			style: "stroke: #10b981; stroke-width: 2;"
+			style: "stroke: #000000; stroke-width: 2;"
 		}
 	])
 </script>
 
-<div class="h-full w-full bg-neutral-50 rounded-lg">
+<div class="h-full w-full rounded-lg bg-neutral-50">
 	<SvelteFlow
 		bind:nodes
 		bind:edges
