@@ -2,7 +2,7 @@
 	import { authClient } from "$lib/auth/client"
 	import { Button, Input } from "$lib/components/ui"
 
-	async function signIn(event: MouseEvent) {
+	async function signIn() {
 		await authClient.signIn.social({
 			provider: "spotify"
 		})
