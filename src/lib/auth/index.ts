@@ -1,9 +1,10 @@
 import { betterAuth } from "better-auth";
 import { expo } from "@better-auth/expo";
 import { Pool } from "pg";
+import { openAPI } from "better-auth/plugins";
 
 export const auth = betterAuth({
-  plugins: [expo()],
+  plugins: [expo(), openAPI()],
   trustedOrigins: ["vibelynx://"],
   account: {
     accountLinking: {
