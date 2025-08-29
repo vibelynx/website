@@ -5,11 +5,6 @@ import { Pool } from "pg";
 export const auth = betterAuth({
   plugins: [expo()],
   trustedOrigins: ["vibelynx://"],
-  account: {
-    accountLinking: {
-      enabled: true
-    }
-  },
   database: new Pool({
     connectionString: process.env.DATABASE_URL
   }),
@@ -39,7 +34,7 @@ export const auth = betterAuth({
     }
   },
   account: {
-    modelName: "acounts",
+    modelName: "accounts",
     fields: {
       userId: "user_id",
       accountId: "account_id",
