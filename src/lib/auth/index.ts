@@ -1,10 +1,10 @@
 import { betterAuth } from "better-auth";
 import { expo } from "@better-auth/expo";
 import { Pool } from "pg";
-import { openAPI } from "better-auth/plugins";
+import { openAPI, bearer } from "better-auth/plugins";
 
 export const auth = betterAuth({
-  plugins: [expo(), openAPI()],
+  plugins: [expo(), openAPI(), bearer()],
   trustedOrigins: ["vibelynx://"],
   database: new Pool({
     connectionString: process.env.DATABASE_URL
