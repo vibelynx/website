@@ -1,57 +1,34 @@
-import { error } from "@sveltejs/kit"
-import type { PageServerLoad } from "../$types"
-import type { Track } from "$lib/types"
-
-const fetchTrackData = async (by: "id" | "url", value: string): Promise<Track | null> => {
-	let response: Response
-
-	if (by === "id" && value != "") {
-		response = await fetch(`https://api.vibelynx.app/v1/tracks/${value}`)
-	} else if (by === "url" && value != "") {
-		response = await fetch(`https://api.vibelynx.app/v1/tracks?urls=${value}`)
-	} else {
-		return null
-	}
-
-	if (!response.ok) {
-		return null // TODO: better error handling
-	}
-
-	const data = await response.json()
-	const track = by === "url" ? data[0] : data
-
-	return {
-		id: track.id,
-		title: track.title,
-		artists: track.artists,
-		album: track.album.name,
-		platforms: track.platforms,
-		artwork: track.artwork
-	}
-}
+import { error } from "@sveltejs/kit";
+import type { PageServerLoad } from "./$types";
+import { GetTrack, GetTracksByURL } from "@vibelynx/vibelynx-js";
 
 export const load: PageServerLoad = async ({ params, url }) => {
-	// @ts-ignore
-	const id = params.id
-	const trackURL = url.searchParams.get("url")
+  const id = params.id
+  const trackURL = url.searchParams.get("url")
 
-	if (id && trackURL) {
-		throw error(400, "provide either 'ids' or 'urls' not both")
-	}
+  if (id && trackURL) {
+    throw error(400, "provide either 'id' or 'url' not both")
+  }
 
-	let track: Track | null = null
+  if (id) {
+    let { track, error: err } = await GetTrack(id)
 
-	if (id) {
-		track = await fetchTrackData("id", id)
-	} else if (trackURL) {
-		track = await fetchTrackData("url", trackURL)
-	} else {
-		throw error(400, "provide an id or  url")
-	}
+    if (err) {
+      throw error(404, "track not found")
+    }
 
-	if (track) {
-		return { track }
-	} else {
-		throw error(404, "track not found")
-	}
+    return { track }
+  }
+  
+  if (trackURL) {
+    let { tracks, error: err } = await GetTracksByURL(["trackURL"])
+
+    if (err || !tracks) {
+      throw error(404, "track not found")
+    }
+
+    return { track: tracks[0] }
+  }
+
+  throw error(404, "track not found")
 }
