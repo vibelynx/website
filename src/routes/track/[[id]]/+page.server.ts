@@ -19,9 +19,9 @@ export const load: PageServerLoad = async ({ params, url }) => {
 
     return { track }
   }
-  
+
   if (trackURL) {
-    let { tracks, error: err } = await GetTracksByURL(["trackURL"])
+    let { tracks, error: err } = await GetTracksByURL([trackURL])
 
     if (err || !tracks) {
       throw error(404, "track not found")
